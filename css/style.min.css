@@ -1,2 +1,2 @@
-body{margin:0}main{margin:20px}ul{margin:0}footer{background-color:#353535}
+html{font-size:16px}html body{margin:0;font-family:Arial,sans-serif}html body .text-center{text-align:center}html body ul{margin:0}html body>header{padding:0.5rem;background-color:rgba(0,0,0,0.25)}html body>header .header__heading{text-align:center}html body>header .header__heading a{font-size:2.5rem;font-weight:bold;font-style:oblique;color:#000}html body>main{margin:20px}html body>main ul{margin:20px}html body>footer{background-color:#353535}
 /*# sourceMappingURL=style.min.css.map */

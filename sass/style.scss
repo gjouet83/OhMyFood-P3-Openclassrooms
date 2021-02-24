@@ -1,19 +1,52 @@
+/* Import des partiels */
+@import "helpers/variables";
+
 /* layout général */
+html {
+    font-size: 16px;
 
-body {
-    margin: 0;
+    body {
+        margin: 0;
+        font-family: $font-family-default;
+
+        /* Définitions générales */
+        .text-center {
+            text-align: center;
+        }
+
+        ul {
+            margin: 0;
+        }
+
+        /* Header général */
+        & > header {
+            padding: 0.5rem;
+            background-color: rgba($color-black, 0.25);
+
+            .header__heading {
+                text-align: center;
+
+                a {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    font-style: oblique;
+                    color: $color-black;
+                }
+            }
+        }
+
+        /* Contenu principal */
+        & > main {
+            margin: 20px;
+
+            ul {
+                margin: 20px;
+            }
+        }
+
+        /* Footer général */
+        & > footer {
+            background-color: $color-footer;
+        }
+    }
 }
-
-main {
-    margin: 20px;
-}
-
-ul {
-    margin: 0;
-}
-
-footer {
-    background-color: #353535;
-}
-
-
