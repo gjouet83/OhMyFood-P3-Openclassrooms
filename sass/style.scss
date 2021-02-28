@@ -20,8 +20,44 @@ html {
             font-family: $font-family-logo;
         }
         main {
+            .howto {
+                h2 {
+                    padding-left: 20px;
+                }
+                ol {
+                    padding-left: 35px;
+                }
+                li {
+                    position: relative;
+                    background-color: $background-middle;
+                    @include font-color ($background-middle);
+                    text-align: center;
+                    line-height: 73px;
+                    margin-bottom: 25px;
+                    width: 320px;
+                    height: 73px;
+                    border-radius: 25px;
+                    @include box-shadow;
+                    counter-increment: count;
+                    i {
+                        position: absolute;
+                        left: 33px;
+                        top: 28px;
+                        color: darken($background-middle, 50%);
+                        padding-right: 25px;
+                    }
+                    &::marker {
+                        background-size: 20px;
+                        background-color: $color-first;
+                        width: 20px;
+                        content: counter(count);
+                    }
+                }
+            }
             .restaurants{
                 background-color: $background-middle;
+                display: flex;
+                flex-wrap: wrap;
                 h2 {
                     padding-top: 50px;
                     padding-left: 20px;
@@ -29,13 +65,14 @@ html {
                 &__thumbnails {
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
+                    justify-content: space-around;
                     &__thumbnail {
+                        @include box-shadow;
+                        position: relative;
                         margin: 0 20px 20px 20px;
-                        max-width: 370px;
+                        max-width: 500px;
                         border: 1px solid transparent;
                         border-radius: 15px;
-                        box-shadow: 0px 5px 10px #E8E8E8;
                         overflow: hidden;
                         figure {
                             height: 174px;
@@ -46,11 +83,12 @@ html {
                             overflow: hidden;
                             img {
                                 width: 100%;
+                                min-height: 100%;
                                 object-fit:cover;
                             }
                         }
                         &--new{
-                            display: none;
+                            @include new;
                         }
                         &__description {
                             background-color: $background-light;
