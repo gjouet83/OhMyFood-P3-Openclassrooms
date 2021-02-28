@@ -1,19 +1,117 @@
+@import "./Utils/mixins";
+@import "./Utils/variables";
+
 /* layout général */
+html {
+    font-size: 16px;
+    font-family: $font-family-default;
+    ul {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    body {
+        margin: 0;
+        header {
+            font-family: $font-family-logo;
+        }
+        main {
+            .restaurants{
+                background-color: $background-middle;
+                h2 {
+                    padding-top: 50px;
+                    padding-left: 20px;
+                }
+                &__thumbnails {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    &__thumbnail {
+                        margin: 0 20px 20px 20px;
+                        max-width: 370px;
+                        border: 1px solid transparent;
+                        border-radius: 15px;
+                        box-shadow: 0px 5px 10px #E8E8E8;
+                        overflow: hidden;
+                        figure {
+                            height: 174px;
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+                            img {
+                                width: 100%;
+                                object-fit:cover;
+                            }
+                        }
+                        &--new{
+                            display: none;
+                        }
+                        &__description {
+                            background-color: $background-light;
+                            display: flex;
+                            justify-content: space-between;
 
-body {
-    margin: 0;
+                            &__name{
+                                padding-top: 18px;
+                                padding-left: 15px;
+                                h3 {
+                                    font-weight: bold;
+                                    margin: 0;
+                                }
+                                h4 {
+                                    margin-top: 5px;
+                                    font-weight: $font-light;
+                                }
+                            }
+                            &__like {
+                                width: 21%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                i {
+                                    display: block;
+                                    font-size: 1.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer {
+            background-color: $background-dark;
+            @include font-color ($background-dark);
+            padding: 24px 0 35px 20px;
+            font-family: $font-family-logo;
+            &__logo {
+                margin-top:0;
+            }
+            &__list {
+                a {
+                    @include font-color ($background-dark);
+                    font-family: $font-family-default;
+                    span {
+                        font-weight: bold;
+                    }
+                } 
+                i {
+                    padding-right: 10px;
+                    &.fas.fa-hands-helping {
+                        font-size: 0.7rem;
+                    }
+                }              
+            }
+        }
+    }
 }
 
-main {
-    margin: 20px;
-}
 
-ul {
-    margin: 0;
-}
 
-footer {
-    background-color: #353535;
-}
 
 
