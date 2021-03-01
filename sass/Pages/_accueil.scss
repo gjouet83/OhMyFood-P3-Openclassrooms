@@ -1,0 +1,152 @@
+main {
+    .location {
+        font-weight: $font-bold;
+        display: flex;
+        justify-content: center;
+        i {
+            display: block;
+            width: 24px;
+            line-height: 51px;
+        }
+    }
+    .discover {
+        background-color: $background-middle;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        text-align: center;
+        &__heading {
+            margin-top: 0;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        &__byline {
+            font-weight: $font-light;
+            font-size: 1.1rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 10px;
+        }
+        &__btn {
+            @include btn;
+        }
+    }
+    .howto {
+        background-color: $background-u-light;
+        padding-top: 30px;
+        font-weight: $font-bold;
+        h2 {
+            padding-left: 20px;
+        }
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            &__element {
+                list-style-type: none; 
+                display: flex;   
+                align-items: center;
+                position: relative;  
+                background-color: $background-middle;
+                @include font-color ($background-middle);
+                line-height: 73px;
+                padding-right: 20px;
+                margin-bottom: 25px;
+                margin-left: 8%;
+                margin-right: 6%;
+                width: 300px;
+                height: 73px;
+                border-radius: 25px;
+                @include box-shadow;
+                &:hover {
+                    background-color: lighten($color-first, 35%);
+                    
+                }
+                &__marker {
+                    background-color: $color-first;
+                    @include font-color ($color-first);
+                    position: absolute;
+                    left: -14px;
+                    width: 24px;
+                    height: 24px;
+                    line-height: 25px;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                    border-radius: 25px;
+                }    
+            }
+            i {
+                display: block;
+                text-align: center;
+                margin-left: 10px;
+                width: 60px;
+                color: darken($background-middle, 50%);
+            }
+        }
+    }
+    .restaurants{
+        background-color: $background-middle;
+        h2 {
+            margin-top: 0;
+            padding-top: 50px;
+            padding-left: 20px;
+        }
+        &__thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            &__thumbnail {
+                @include box-shadow;
+                position: relative;
+                margin: 0 20px 20px 20px;
+                max-width: 500px;
+                border-radius: 15px;
+                overflow: hidden;
+                figure {
+                    height: 174px;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        min-height: 100%;
+                        object-fit:cover;
+                    }
+                }
+                &--new{
+                    @include new;
+                }
+                &__description {
+                    background-color: $background-light;
+                    display: flex;
+                    justify-content: space-between;
+
+                    &__name{
+                        padding-top: 18px;
+                        padding-left: 15px;
+                        h3 {
+                            font-weight: bold;
+                            margin: 0;
+                        }
+                        h4 {
+                            margin-top: 5px;
+                            font-weight: $font-light;
+                        }
+                    }
+                    &__like {
+                        width: 21%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        i {
+                            display: block;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

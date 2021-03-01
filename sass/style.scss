@@ -1,11 +1,15 @@
-@import "./Utils/mixins";
 @import "./Utils/variables";
+@import "./Utils/mixins";
+@import "./layouts/header";
+@import "./layouts/footer";
+@import "./Pages/accueil";
+@import "./Pages/menus";
 
 /* layout général */
 html {
     font-size: 16px;
     font-family: $font-family-default;
-    ul {
+    ul, ol {
         margin: 0;
         padding-left: 0;
         list-style: none;
@@ -16,136 +20,7 @@ html {
     }
     body {
         margin: 0;
-        header {
-            font-family: $font-family-logo;
-        }
-        main {
-            .howto {
-                h2 {
-                    padding-left: 20px;
-                }
-                ol {
-                    padding-left: 35px;
-                }
-                li {
-                    position: relative;
-                    background-color: $background-middle;
-                    @include font-color ($background-middle);
-                    text-align: center;
-                    line-height: 73px;
-                    margin-bottom: 25px;
-                    width: 320px;
-                    height: 73px;
-                    border-radius: 25px;
-                    @include box-shadow;
-                    counter-increment: count;
-                    i {
-                        position: absolute;
-                        left: 33px;
-                        top: 28px;
-                        color: darken($background-middle, 50%);
-                        padding-right: 25px;
-                    }
-                    &::marker {
-                        background-size: 20px;
-                        background-color: $color-first;
-                        width: 20px;
-                        content: counter(count);
-                    }
-                }
-            }
-            .restaurants{
-                background-color: $background-middle;
-                display: flex;
-                flex-wrap: wrap;
-                h2 {
-                    padding-top: 50px;
-                    padding-left: 20px;
-                }
-                &__thumbnails {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                    &__thumbnail {
-                        @include box-shadow;
-                        position: relative;
-                        margin: 0 20px 20px 20px;
-                        max-width: 500px;
-                        border: 1px solid transparent;
-                        border-radius: 15px;
-                        overflow: hidden;
-                        figure {
-                            height: 174px;
-                            margin: 0;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            overflow: hidden;
-                            img {
-                                width: 100%;
-                                min-height: 100%;
-                                object-fit:cover;
-                            }
-                        }
-                        &--new{
-                            @include new;
-                        }
-                        &__description {
-                            background-color: $background-light;
-                            display: flex;
-                            justify-content: space-between;
-
-                            &__name{
-                                padding-top: 18px;
-                                padding-left: 15px;
-                                h3 {
-                                    font-weight: bold;
-                                    margin: 0;
-                                }
-                                h4 {
-                                    margin-top: 5px;
-                                    font-weight: $font-light;
-                                }
-                            }
-                            &__like {
-                                width: 21%;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                i {
-                                    display: block;
-                                    font-size: 1.5rem;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .footer {
-            background-color: $background-dark;
-            @include font-color ($background-dark);
-            padding: 24px 0 35px 20px;
-            font-family: $font-family-logo;
-            &__logo {
-                margin-top:0;
-            }
-            &__list {
-                a {
-                    @include font-color ($background-dark);
-                    font-family: $font-family-default;
-                    span {
-                        font-weight: bold;
-                    }
-                } 
-                i {
-                    padding-right: 10px;
-                    &.fas.fa-hands-helping {
-                        font-size: 0.7rem;
-                    }
-                }              
-            }
-        }
+        background-color: darken($background-light, 5%);
     }
 }
 

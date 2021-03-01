@@ -1,0 +1,24 @@
+.footer {
+    background-color: $background-dark;
+    @include font-color ($background-dark);
+    padding: 24px 0 35px 20px;
+    font-family: $font-family-logo;
+    &__logo {
+        margin-top:0;
+    }
+    &__list {
+        a {
+            @include font-color ($background-dark);
+            font-family: $font-family-default;
+            span {
+                font-weight: bold;
+            }
+        } 
+        i {
+            padding-right: 10px;
+            &.fas.fa-hands-helping {
+                font-size: 0.7rem;
+            }
+        }              
+    }
+}
