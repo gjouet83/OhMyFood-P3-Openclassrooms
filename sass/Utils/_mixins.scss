@@ -33,7 +33,8 @@
     border-radius: 25px;
     border: none;
     @include font-color ($color-first);
-    font-weight: $font-bold;
+    font-weight: $font-light;
+    font-size: 0.9rem;
     @include box-shadow;
 }
 
