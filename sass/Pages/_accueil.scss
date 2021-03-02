@@ -1,37 +1,63 @@
 main {
+    #location__label::placeholder {
+        color: black;
+    }
     .location {
-        font-weight: $font-bold;
-        display: flex;
-        justify-content: center;
-        i {
-            display: block;
-            width: 24px;
-            line-height: 51px;
+        &__entry {
+            font-weight: $font-bold;
+            display: flex;
+            justify-content: center;
+            border:none;
+            padding: 0;
+            &__label {
+                display: block;
+                text-align: center;
+                width: 24px;
+                line-height: 51px;
+            }
+            &__field {
+                font-family: $font-family-default;
+                font-weight: $font-bold;
+                width: 150px;
+                font-size: 1rem;
+                padding-left: 10px;
+                background-color: transparent;
+                border: none;
+                &:focus {
+                    outline-style: none;
+                }
+            }
+        }
+        &__discover {
+            background-color: $background-middle;
+            padding-top: 40px;
+            padding-bottom: 50px;
+            text-align: center;
+            border: none;
+            &__heading {
+                font-size: 1.5rem;
+                margin-top: 0;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+            &__byline {
+                font-weight: $font-light;
+                font-size: 1.1rem;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 10px;
+            }
+            &__btn {
+                @include btn;
+                &:focus{
+                    outline-style: none;
+                }
+            }
         }
     }
-    .discover {
-        background-color: $background-middle;
-        padding-top: 40px;
-        padding-bottom: 50px;
-        text-align: center;
-        &__heading {
-            margin-top: 0;
-            margin-left: 50px;
-            margin-right: 50px;
-        }
-        &__byline {
-            font-weight: $font-light;
-            font-size: 1.1rem;
-            margin-left: auto;
-            margin-right: auto;
-            padding-bottom: 10px;
-        }
-        &__btn {
-            @include btn;
-        }
-    }
+
     .howto {
-        background-color: $background-u-light;
+        background-color: $background-light;
         padding-top: 30px;
         font-weight: $font-bold;
         h2 {
@@ -59,7 +85,7 @@ main {
                 @include box-shadow;
                 &:hover {
                     background-color: lighten($color-first, 35%);
-                    
+                    color: $color-first;
                 }
                 &__marker {
                     background-color: $color-first;
@@ -73,14 +99,14 @@ main {
                     margin: 0;
                     padding: 0;
                     border-radius: 25px;
+                }
+                &__picto {
+                    display: block;
+                    text-align: center;
+                    margin-left: 10px;
+                    width: 60px;
+                    color: darken($background-middle, 50%);
                 }    
-            }
-            i {
-                display: block;
-                text-align: center;
-                margin-left: 10px;
-                width: 60px;
-                color: darken($background-middle, 50%);
             }
         }
     }
@@ -102,6 +128,9 @@ main {
                 max-width: 500px;
                 border-radius: 15px;
                 overflow: hidden;
+                a {
+                    @include box-clickable;
+                }
                 figure {
                     height: 174px;
                     margin: 0;
@@ -137,6 +166,7 @@ main {
                     }
                     &__like {
                         width: 21%;
+                        position: relative;
                         display: flex;
                         justify-content: center;
                         align-items: center;

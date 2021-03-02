@@ -29,16 +29,17 @@
     height: 50px;
     width: 186px;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
     line-height: 50px;
     border-radius: 25px;
-    a {
-        display: block;
-        font-weight: $font-bold;
-        width: 100%;
-        height: 100%;
-        @include font-color ($color-first); 
-    }
+    border: none;
+    @include font-color ($color-first);
+    font-weight: $font-bold;
     @include box-shadow;
+}
+
+@mixin box-clickable {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
