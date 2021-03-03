@@ -21,6 +21,12 @@ html {
     body {
         margin: 0;
         background-color: darken($background-light, 8%);
+        fieldset {
+            margin: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border: none;
+        }
     }
 }
 

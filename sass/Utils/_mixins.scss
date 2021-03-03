@@ -36,6 +36,9 @@
     font-weight: $font-light;
     font-size: 0.9rem;
     @include box-shadow;
+    &:focus{
+        outline-style: none;
+    }
 }
 
 @mixin box-clickable {
