@@ -15,7 +15,6 @@ main {
                 line-height: 51px;
             }
             &__field {
-                font-family: $font-family-default;
                 font-weight: $font-bold;
                 width: 150px;
                 font-size: 1rem;
@@ -80,7 +79,9 @@ main {
                 @include box-shadow;
                 &:hover {
                     background-color: lighten($color-first, 35%);
-                    color: $color-first;
+                    & i {
+                        color: $color-first;
+                    }
                 }
                 &__marker {
                     background-color: $color-first;
@@ -123,9 +124,7 @@ main {
                 max-width: 500px;
                 border-radius: 15px;
                 overflow: hidden;
-                a {
-                    @include box-clickable;
-                }
+                @include box-clickable;
                 figure {
                     height: 174px;
                     margin: 0;
