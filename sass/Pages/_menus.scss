@@ -18,6 +18,7 @@ main {
         &__heading {
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
             font-family: $font-family-logo;
             padding-left: 20px;
             padding-right: 20px;
@@ -25,12 +26,24 @@ main {
             &__name {
                 font-size: 1.6rem;
                 margin: 0;
+                margin-right: auto;
             }
             &__like {
-                text-align: center;
-                margin-right: 10px;
+                position: relative;
+                top: 2px;
+                width: 24px;
+                height: 24px;
                 font-size: 1.5rem;
-
+                margin-right: auto;
+                margin-left: auto;
+                .far.fa-heart {
+                    position:absolute;
+                    display: none;
+                }
+                .fa.fa-heart {
+                    position:absolute;
+                    z-index: 1;
+                }
             }
         }
         &__part{
@@ -50,15 +63,16 @@ main {
             margin-bottom: 20px;
             margin-left: 12px;
             margin-right: 12px;
-            padding-left:12px;
             display: flex;
-            justify-content: space-between;
+            overflow: hidden;
             &__name {
                 font-weight: $font-bold;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                font-size: 1.1rem;
+                font-size: 1rem;
+                margin-left: 10px;
+                margin-right: 10px;
                 span {
                     display: block;
                     overflow: hidden;
@@ -70,12 +84,35 @@ main {
                 }
             }
             &__price {
-                text-align: right;
+                margin-left: auto;
                 align-self: flex-end;
-                margin-right: 20px;
-                margin-left: 20px;
                 font-weight: $font-bold;
-            } 
+            }
+            &__checked {
+                background-color: $color-third;
+                text-align: center;
+                min-width: 0px;
+                width: 0;
+                margin: 0;
+                height: 74px;
+                margin-left: 20px;
+                transition: all 400ms;
+            }
+            .fas.fa-check-circle {
+                color: white;
+                line-height: 75px;
+                font-size: 20px;
+            }
+            &:hover .menu__dish__checked {   
+                min-width: 60px;
+                & .fas.fa-check-circle {
+                    transition: 400ms;
+                    transform: rotate(360deg);
+                }
+            }
+            &:not(:hover) .menu__dish__checked {
+                min-width: 0px;
+            }
         }
         &__btn {
             margin: 0;

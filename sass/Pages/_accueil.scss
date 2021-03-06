@@ -77,6 +77,7 @@ main {
                 height: 73px;
                 border-radius: 25px;
                 @include box-shadow;
+                transition: all 450ms;
                 &:hover {
                     background-color: lighten($color-first, 35%);
                     & i {

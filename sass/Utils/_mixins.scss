@@ -21,11 +21,9 @@
     position: absolute;
     right: 10px;
 }
-@mixin btn-bg-color ($color-one: $color-first, $color-two: $color-second) {
-    background: linear-gradient(to bottom right, $color-two, $color-one);
-}
+
 @mixin btn {
-    @include btn-bg-color;
+    background: $background-btn;
     margin-left: auto;
     margin-right: auto;
     height: 50px;
@@ -39,7 +37,7 @@
     font-size: 0.9rem;
     @include box-shadow;
     &:hover {
-        @include btn-bg-color (lighten($color-first, 5%),lighten($color-second, 5%));
+        background: $background-btn-light;
         @include box-shadow(darken(#CACACA, 20%));
     }
     &:focus{

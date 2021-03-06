@@ -7,6 +7,8 @@ $color-first: #9356DC;
 $color-second: #FF79DA;
 $color-third: #99E2D0;
 $color-box-shadow: #CACACA;
+$background-btn: linear-gradient(to top left, $color-first, $color-second);
+$background-btn-light: linear-gradient(to top left, lighten($color-first, 5%), lighten($color-second, 5%));
 $background-light: #FFFFFF;
 $background-middle: #F6F6F6;
 $background-dark: #353535;
