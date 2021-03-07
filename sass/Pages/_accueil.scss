@@ -146,7 +146,6 @@ main {
                     background-color: $background-light;
                     display: flex;
                     justify-content: space-between;
-
                     &__name{
                         padding-top: 18px;
                         padding-left: 15px;
@@ -160,14 +159,38 @@ main {
                         }
                     }
                     &__like {
-                        width: 21%;
                         position: relative;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        i {
-                            display: block;
-                            font-size: 1.5rem;
+                        top: 25px;
+                        right: 25px;
+                        width: 24px;
+                        height: 24px;
+                        font-size: 1.5rem;
+                        background: $background-btn;
+                        &:hover .restaurants__thumbnails__thumbnail__description__like--empty {
+                            transition: 1000ms;
+                            height: 0;
+                        }
+                        &:not(:hover) .restaurants__thumbnails__thumbnail__description__like--empty {
+                            transition: 1000ms;
+                        }
+                        &--empty {
+                            position: absolute;
+                            height: 24px;
+                            width: 24px;
+                            line-height: 24px;
+                            overflow: hidden;
+                            & > i {
+                                background-color: $background-light;
+                                z-index: 1; 
+                            }                    
+                        }
+                        &--full {
+                            position: absolute;
+                            height: 24px;
+                            width: 24px;
+                            line-height: 24px;
+                            background: $background-light;
+                            mix-blend-mode: lighten;
                         }
                     }
                 }
