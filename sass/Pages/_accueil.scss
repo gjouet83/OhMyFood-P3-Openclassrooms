@@ -160,31 +160,32 @@ main {
                     }
                     &__like {
                         position: relative;
-                        top: 25px;
-                        right: 25px;
-                        width: 24px;
-                        height: 24px;
+                        top: 12px;
+                        right: 12px;
+                        width: 48px;
+                        height: 48px;
                         font-size: 1.5rem;
-                        background: $background-btn;
+                        background: no-repeat center/24px 24px $background-like;
                         &:hover .restaurants__thumbnails__thumbnail__description__like--empty {
-                            transition: 1000ms;
                             height: 0;
                         }
-                        &:not(:hover) .restaurants__thumbnails__thumbnail__description__like--empty {
-                            transition: 1000ms;
-                        }
                         &--empty {
+                            margin-left: 12px;
+                            margin-top: 12px;
                             position: absolute;
                             height: 24px;
                             width: 24px;
                             line-height: 24px;
                             overflow: hidden;
+                            transition: 1000ms;
                             & > i {
                                 background-color: $background-light;
                                 z-index: 1; 
                             }                    
                         }
                         &--full {
+                            margin-left: 12px;
+                            margin-top: 12px;
                             position: absolute;
                             height: 24px;
                             width: 24px;

@@ -34,15 +34,10 @@ main {
                 width: 24px;
                 height: 24px;
                 font-size: 1.5rem;
-                margin-right: auto;
                 margin-left: auto;
-                background: $background-btn;
+                background: $background-like;
                 &:hover .menu__heading__like--empty {
-                    transition: 1000ms;
                     height: 0px;
-                }
-                &:not(:hover) .menu__heading__like--empty {
-                    transition: 1000ms;
                 }
                 &--empty {
                     position: absolute;
@@ -50,6 +45,7 @@ main {
                     width: 24px;
                     line-height: 24px;
                     overflow: hidden;
+                    transition: 1000ms ease;
                     & > i {
                         background-color: $background-middle;
                         z-index: 1;
@@ -85,7 +81,7 @@ main {
             display: flex;
             overflow: hidden;
             &__name {
-                font-weight: $font-bold;
+                font-weight: bold;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
@@ -115,7 +111,7 @@ main {
                 margin: 0;
                 height: 74px;
                 margin-left: 20px;
-                transition: all 400ms;
+                transition: all 400ms ease;          
             }
             .fas.fa-check-circle {
                 color: white;
@@ -125,12 +121,9 @@ main {
             &:hover .menu__dish__checked {   
                 min-width: 60px;
                 & .fas.fa-check-circle {
-                    transition: 400ms;
+                    transition: 400ms ease;
                     transform: rotate(360deg);
                 }
-            }
-            &:not(:hover) .menu__dish__checked {
-                min-width: 0px;
             }
         }
         &__btn {
