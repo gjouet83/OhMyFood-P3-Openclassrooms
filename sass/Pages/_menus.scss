@@ -17,7 +17,7 @@ main {
         border-top-right-radius: 25px;
         @for $i from 0 through 9 {
             .delay-#{$i} {
-                animation: menus 1000ms 100ms*$i ease-out forwards;
+                animation: menus 1000ms 200ms*$i ease-out forwards;
             }
         }
         &__heading {
