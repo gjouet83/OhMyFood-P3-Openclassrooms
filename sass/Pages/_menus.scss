@@ -15,6 +15,11 @@ main {
         margin-top: -40px;
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
+        @for $i from 0 through 9 {
+            .delay-#{$i} {
+                animation: menus 1000ms 100ms*$i ease-out forwards;
+            }
+        }
         &__heading {
             display: flex;
             justify-content: space-between;
@@ -80,6 +85,7 @@ main {
             margin-right: 12px;
             display: flex;
             overflow: hidden;
+            opacity: 0;            
             &__name {
                 font-weight: bold;
                 overflow: hidden;

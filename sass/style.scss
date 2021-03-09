@@ -1,9 +1,11 @@
-@import "./Utils/variables";
-@import "./Utils/mixins";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/keyframes";
 @import "./layouts/header";
 @import "./layouts/footer";
-@import "./Pages/accueil";
-@import "./Pages/menus";
+@import "./pages/accueil";
+@import "./pages/menus";
+
 
 /* layout général */
 html {
@@ -19,8 +21,59 @@ html {
         color: black;
     }
     body {
+        position: relative;
         margin: 0;
         background-color: darken($background-light, 8%);
+        .waiter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            background-color: $background-middle;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            opacity: 0.9;
+            transform: scale(0);
+            animation: appear 2000ms backwards;
+            &__element {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                animation: waiter 3000ms linear;
+                &--purple {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    top: 15px;
+                    right: 7px;
+                    background-color: $color-first;
+                    animation: waiter 3000ms linear;
+                    animation-direction: reverse;
+                }
+                &--pink {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    bottom: 30px;
+                    background-color: $color-second;
+                    animation: waiter 3000ms linear;
+                    animation-direction: reverse;
+                }
+                &--green {
+                    position: relative;
+                    width: 20px;
+                    height: 20px;
+                    top: 15px;
+                    left: 7px;
+                    background-color: $color-third;
+                    animation: waiter 3000ms linear;
+                    animation-direction: reverse;
+                }
+            }              
+        }
         fieldset {
             padding-top: 0;
             padding-bottom: 0;
