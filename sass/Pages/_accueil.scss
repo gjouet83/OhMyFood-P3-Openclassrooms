@@ -1,198 +1,191 @@
-main {
-    #location__label::placeholder {
-        color: black;
-    }
-    .location {
-        &__entry {
+#location__label::placeholder {
+    color: black;
+}
+fieldset {
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+}
+.location {
+    &__entry {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        font-weight: $font-bold;
+        &__label {
+            width: 24px;
+            line-height: 51px;
+            display: block;
+            text-align: center;
+        }
+        &__field {
+            width: 150px;
+            padding-left: 10px;
+            background-color: transparent;
+            border: none;
             font-weight: $font-bold;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            &__label {
+            font-size: 1rem;
+            &:focus {
+                outline-style: none;
+            }
+        }
+    }
+    &__discover {
+        background-color: $background-middle;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        text-align: center;
+        &__heading {
+            margin-top: 0;
+            margin-left: 50px;
+            margin-right: 50px;
+            font-size: 1.5rem;
+        }
+        &__byline {
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 10px;
+            font-weight: $font-light;
+            font-size: 1.1rem;
+        }
+        &__btn {
+            @include btn;
+        }
+    }
+}
+
+.howto {
+    background-color: $background-light;
+    padding-top: 30px;
+    font-weight: $font-bold;
+    h2 {
+        padding-left: 20px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &__element {
+            width: 300px;
+            height: 73px;
+            padding-right: 20px;
+            margin-bottom: 25px;
+            margin-left: 8%;
+            margin-right: 6%;
+            line-height: 73px;
+            display: flex;   
+            align-items: center;
+            position: relative;
+            list-style-type: none;   
+            background-color: $background-middle;
+            @include font-color ($background-middle);
+            border-radius: 25px;
+            @include box-shadow;
+            transition: all 450ms;
+            &:hover {
+                background-color: lighten($color-first, 35%);
+                & i {
+                    color: $color-first;
+                }
+            }
+            &__marker {
+                width: 24px;
+                height: 24px;
+                line-height: 25px;
+                position: absolute;
+                left: -14px;
+                margin: 0;
+                padding: 0;
+                border-radius: 25px;
+                background-color: $color-first;
+                @include font-color ($color-first);
+                text-align: center;
+            }
+            &__picto {
+                width: 60px;
+                margin-left: 10px;
                 display: block;
                 text-align: center;
-                width: 24px;
-                line-height: 51px;
-            }
-            &__field {
-                font-weight: $font-bold;
-                width: 150px;
-                font-size: 1rem;
-                padding-left: 10px;
-                background-color: transparent;
-                border: none;
-                &:focus {
-                    outline-style: none;
-                }
-            }
-        }
-        &__discover {
-            background-color: $background-middle;
-            padding-top: 40px;
-            padding-bottom: 50px;
-            text-align: center;
-            &__heading {
-                font-size: 1.5rem;
-                margin-top: 0;
-                margin-left: 50px;
-                margin-right: 50px;
-            }
-            &__byline {
-                font-weight: $font-light;
-                font-size: 1.1rem;
-                margin-left: auto;
-                margin-right: auto;
-                padding-bottom: 10px;
-            }
-            &__btn {
-                @include btn;
-            }
+                color: darken($background-middle, 50%);
+            }    
         }
     }
-
-    .howto {
-        background-color: $background-light;
-        padding-top: 30px;
-        font-weight: $font-bold;
-        h2 {
-            padding-left: 20px;
-        }
-        &__list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            &__element {
-                list-style-type: none; 
-                display: flex;   
+}
+.restaurants{
+    background-color: $background-middle;
+    h2 {
+        margin-top: 0;
+        padding-top: 50px;
+        padding-left: 20px;
+    }
+    &__thumbnails {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        &__thumbnail {
+            max-width: 500px;
+            margin: 0 20px 20px 20px;
+            position: relative;
+            border-radius: 15px;
+            @include box-shadow;
+            @include box-clickable;
+            overflow: hidden;
+            figure {
+                height: 174px;
+                margin: 0;
+                display: flex;
+                justify-content: center;
                 align-items: center;
-                position: relative;  
-                background-color: $background-middle;
-                @include font-color ($background-middle);
-                line-height: 73px;
-                padding-right: 20px;
-                margin-bottom: 25px;
-                margin-left: 8%;
-                margin-right: 6%;
-                width: 300px;
-                height: 73px;
-                border-radius: 25px;
-                @include box-shadow;
-                transition: all 450ms;
-                &:hover {
-                    background-color: lighten($color-first, 35%);
-                    & i {
-                        color: $color-first;
-                    }
-                }
-                &__marker {
-                    background-color: $color-first;
-                    @include font-color ($color-first);
-                    position: absolute;
-                    left: -14px;
-                    width: 24px;
-                    height: 24px;
-                    line-height: 25px;
-                    text-align: center;
-                    margin: 0;
-                    padding: 0;
-                    border-radius: 25px;
-                }
-                &__picto {
-                    display: block;
-                    text-align: center;
-                    margin-left: 10px;
-                    width: 60px;
-                    color: darken($background-middle, 50%);
-                }    
-            }
-        }
-    }
-    .restaurants{
-        background-color: $background-middle;
-        h2 {
-            margin-top: 0;
-            padding-top: 50px;
-            padding-left: 20px;
-        }
-        &__thumbnails {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            &__thumbnail {
-                @include box-shadow;
-                position: relative;
-                margin: 0 20px 20px 20px;
-                max-width: 500px;
-                border-radius: 15px;
                 overflow: hidden;
-                @include box-clickable;
-                figure {
-                    height: 174px;
-                    margin: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    overflow: hidden;
-                    img {
-                        width: 100%;
-                        min-height: 100%;
-                        object-fit:cover;
+                img {
+                    width: 100%;
+                    min-height: 100%;
+                    object-fit:cover;
+                }
+            }
+            &--new{
+                @include new;
+            }
+            &__description {
+                background-color: $background-light;
+                display: flex;
+                justify-content: space-between;
+                &__name{
+                    padding-top: 18px;
+                    padding-left: 15px;
+                    h3 {
+                        font-weight: bold;
+                        margin: 0;
+                    }
+                    h4 {
+                        margin-top: 5px;
+                        font-weight: $font-light;
                     }
                 }
-                &--new{
-                    @include new;
-                }
-                &__description {
-                    background-color: $background-light;
-                    display: flex;
-                    justify-content: space-between;
-                    &__name{
-                        padding-top: 18px;
-                        padding-left: 15px;
-                        h3 {
-                            font-weight: bold;
-                            margin: 0;
-                        }
-                        h4 {
-                            margin-top: 5px;
-                            font-weight: $font-light;
-                        }
+                &__like {
+                    width: 48px;
+                    height: 48px;
+                    position: relative;
+                    top: 12px;
+                    right: 12px;
+                    background: no-repeat center/24px 24px $background-like;
+                    font-size: 1.5rem;
+                    &:hover .restaurants__thumbnails__thumbnail__description__like--empty {
+                        height: 0;
                     }
-                    &__like {
-                        position: relative;
-                        top: 12px;
-                        right: 12px;
-                        width: 48px;
-                        height: 48px;
-                        font-size: 1.5rem;
-                        background: no-repeat center/24px 24px $background-like;
-                        &:hover .restaurants__thumbnails__thumbnail__description__like--empty {
-                            height: 0;
-                        }
-                        &--empty {
-                            margin-left: 12px;
-                            margin-top: 12px;
-                            position: absolute;
-                            height: 24px;
-                            width: 24px;
-                            line-height: 24px;
-                            overflow: hidden;
-                            transition: 1000ms;
-                            & > i {
-                                background-color: $background-light;
-                                z-index: 1; 
-                            }                    
-                        }
-                        &--full {
-                            margin-left: 12px;
-                            margin-top: 12px;
-                            position: absolute;
-                            height: 24px;
-                            width: 24px;
-                            line-height: 24px;
-                            background: $background-light;
-                            mix-blend-mode: lighten;
-                        }
+                    &--empty {
+                        @include heart;
+                        overflow: hidden;
+                        transition: 1000ms;
+                        & > i {
+                            background-color: $background-light;
+                            z-index: 1; 
+                        }                    
+                    }
+                    &--full {
+                        @include heart;
+                        background: $background-light;
+                        mix-blend-mode: lighten;
                     }
                 }
             }

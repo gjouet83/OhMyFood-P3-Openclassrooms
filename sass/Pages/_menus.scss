@@ -1,148 +1,144 @@
-main {
-    .background {
+.background {
+    display: flex;
+    align-items: center;
+    height: 250px;
+    img {
+        min-height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+}    
+.menu {
+    background-color: $background-middle;
+    margin-top: -40px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    @for $i from 0 through 9 {
+        .delay-#{$i} {
+            animation: menus 1000ms 200ms*$i ease-out forwards;
+        }
+    }
+    &__heading {
         display: flex;
-        align-items: center;
-        height: 250px;
-        img {
-            min-height: 100%;
-            width: 100%;
-            object-fit: cover;
-            z-index: -1;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: $font-family-logo;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 35px;
+        &__name {
+            font-size: 1.6rem;
+            margin: 0;
+            margin-right: auto;
         }
-    }    
-    .menu {
-        background-color: $background-middle;
-        margin-top: -40px;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        @for $i from 0 through 9 {
-            .delay-#{$i} {
-                animation: menus 1000ms 200ms*$i ease-out forwards;
+        &__like {
+            position: relative;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            font-size: 1.5rem;
+            margin-left: auto;
+            background: $background-like;
+            &:hover .menu__heading__like--empty {
+                height: 0px;
             }
-        }
-        &__heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            font-family: $font-family-logo;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 35px;
-            &__name {
-                font-size: 1.6rem;
-                margin: 0;
-                margin-right: auto;
-            }
-            &__like {
-                position: relative;
-                top: 2px;
-                width: 24px;
+            &--empty {
+                position: absolute;
                 height: 24px;
-                font-size: 1.5rem;
-                margin-left: auto;
-                background: $background-like;
-                &:hover .menu__heading__like--empty {
-                    height: 0px;
-                }
-                &--empty {
-                    position: absolute;
-                    height: 24px;
-                    width: 24px;
-                    line-height: 24px;
-                    overflow: hidden;
-                    transition: 1000ms ease;
-                    & > i {
-                        background-color: $background-middle;
-                        z-index: 1;
-                    }                    
-                }
-                &--full {
-                    position: absolute;
-                    height: 24px;
-                    width: 24px;
-                    line-height: 24px;
-                    background: $background-middle;
-                    mix-blend-mode: lighten; 
-                }
+                width: 24px;
+                line-height: 24px;
+                overflow: hidden;
+                transition: 1000ms ease;
+                & > i {
+                    background-color: $background-middle;
+                    z-index: 1;
+                }                    
+            }
+            &--full {
+                position: absolute;
+                height: 24px;
+                width: 24px;
+                line-height: 24px;
+                background: $background-middle;
+                mix-blend-mode: lighten; 
             }
         }
-        &__part{
-            border-bottom: 3px solid $color-third;
-            width: 40px;
-            padding-top: 40px;
-            padding-left: 0;
-            padding-bottom: 7px;
-            margin-top: 0;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-        &__dish {
-            @include box-shadow;
-            border-radius: 15px;
-            background-color: $background-light;
-            margin-bottom: 20px;
-            margin-left: 12px;
-            margin-right: 12px;
-            display: flex;
+    }
+    &__part{
+        border-bottom: 3px solid $color-third;
+        width: 40px;
+        padding: 40px 0 7px 0;
+        margin-top: 0;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    &__dish {
+        @include box-shadow;
+        display: flex;
+        border-radius: 15px;
+        background-color: $background-light;
+        margin-bottom: 20px;
+        margin-left: 12px;
+        margin-right: 12px;
+        overflow: hidden;
+        opacity: 0;            
+        &__name {
+            margin-left: 10px;
+            margin-right: 10px;
             overflow: hidden;
-            opacity: 0;            
-            &__name {
-                font-weight: bold;
+            font-weight: bold;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 1rem;
+            span {
+                display: block;
                 overflow: hidden;
+                margin-top: 5px;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                font-size: 1rem;
-                margin-left: 10px;
-                margin-right: 10px;
-                span {
-                    display: block;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    margin-top: 5px;
-                    font-weight: $font-light;
-                    font-size: 0.9rem;
-                }
-            }
-            &__price {
-                margin-left: auto;
-                align-self: flex-end;
-                font-weight: $font-bold;
-            }
-            &__checked {
-                background-color: $color-third;
-                text-align: center;
-                min-width: 0px;
-                width: 0;
-                margin: 0;
-                height: 74px;
-                margin-left: 20px;
-                transition: all 400ms ease;          
-            }
-            .fas.fa-check-circle {
-                color: white;
-                line-height: 75px;
-                font-size: 20px;
-            }
-            &:hover .menu__dish__checked {   
-                min-width: 60px;
-                & .fas.fa-check-circle {
-                    transition: 400ms ease;
-                    transform: rotate(360deg);
-                }
+                font-weight: $font-light;
+                font-size: 0.9rem;
             }
         }
-        &__btn {
+        &__price {
+            margin-left: auto;
+            align-self: flex-end;
+            font-weight: $font-bold;
+        }
+        &__checked {
+            width: 0;
+            min-width: 0px;
+            height: 74px;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            &__button {
-                @include btn;
-                margin-top: 30px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 60px;
-            } 
+            margin-left: 20px;
+            background-color: $color-third;
+            text-align: center;
+            transition: all 400ms ease;          
         }
+        .fas.fa-check-circle {
+            font-size: 20px;
+            line-height: 75px;
+            color: white; 
+        }
+        &:hover .menu__dish__checked {   
+            min-width: 60px;
+            & .fas.fa-check-circle {
+                transition: 400ms ease;
+                transform: rotate(360deg);
+            }
+        }
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        &__button {
+            @include btn;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 60px;
+        } 
     }
 }
