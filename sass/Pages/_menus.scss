@@ -1,7 +1,7 @@
 .background {
     display: flex;
     align-items: center;
-    height: 250px;
+    height: 40vh;
     img {
         min-height: 100%;
         width: 100%;
@@ -10,6 +10,11 @@
     }
 }    
 .menu {
+    @media all and (min-width: 768px) {
+        padding-left: 20vw;
+        padding-right: 20vw;
+        margin-top: 0;
+    }
     background-color: $background-middle;
     margin-top: -40px;
     border-top-left-radius: 25px;

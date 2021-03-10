@@ -55,6 +55,10 @@ fieldset {
 }
 
 .howto {
+    @media all and (min-width: 768px) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
     background-color: $background-light;
     padding-top: 30px;
     font-weight: $font-bold;
@@ -112,6 +116,10 @@ fieldset {
     }
 }
 .restaurants{
+    @media all and (min-width: 768px) {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
     background-color: $background-middle;
     h2 {
         margin-top: 0;
