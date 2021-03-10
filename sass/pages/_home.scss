@@ -86,6 +86,7 @@ fieldset {
             border-radius: 25px;
             @include box-shadow;
             transition: all 450ms;
+            cursor: pointer;
             &:hover {
                 background-color: lighten($color-first, 35%);
                 & i {
@@ -178,6 +179,7 @@ fieldset {
                     right: 12px;
                     background: no-repeat center/24px 24px $background-like;
                     font-size: 1.5rem;
+                    cursor: pointer;
                     &:hover .restaurants__thumbnails__thumbnail__description__like--empty {
                         height: 0;
                     }

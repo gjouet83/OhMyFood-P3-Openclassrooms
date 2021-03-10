@@ -45,6 +45,7 @@
             font-size: 1.5rem;
             margin-left: auto;
             background: $background-like;
+            cursor: pointer;
             &:hover .menu__heading__like--empty {
                 height: 0px;
             }
@@ -87,7 +88,8 @@
         margin-left: 12px;
         margin-right: 12px;
         overflow: hidden;
-        opacity: 0;            
+        opacity: 0; 
+        cursor: pointer;           
         &__name {
             margin-left: 10px;
             margin-right: 10px;
@@ -144,6 +146,7 @@
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 60px;
+            cursor: pointer;
         } 
     }
 }
