@@ -1,0 +1,25 @@
+.btn-like {
+    background-color: transparent;
+    position: absolute;
+    padding: 0;
+    border: none;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.btn-submit {
+    height: 50px;
+    width: 186px;
+    border-radius: 25px;
+    border: none;
+    @include box-shadow;
+    line-height: 50px;
+    background: $background-btn;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    @include font-color ($color-first);
+    font-weight: $font-light;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
