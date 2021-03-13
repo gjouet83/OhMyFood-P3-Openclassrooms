@@ -45,9 +45,21 @@
             font-size: 1.5rem;
             margin-left: auto;
             background: $background-like;
-            cursor: pointer;
             &:hover .menu__heading__like--empty {
                 height: 0px;
+            }
+            &__button {
+                background-color: transparent;
+                position: absolute;
+                height: 24px;
+                width: 24px;
+                padding: 0;
+                border: none;
+                z-index: 3;
+                cursor: pointer;
+                &:focus {
+                    outline-style: none;
+                }
             }
             &--empty {
                 position: absolute;
@@ -56,9 +68,10 @@
                 line-height: 24px;
                 overflow: hidden;
                 transition: 1000ms ease;
+                z-index: 2;
                 & > i {
                     background-color: $background-middle;
-                    z-index: 1;
+                    
                 }                    
             }
             &--full {
@@ -68,6 +81,7 @@
                 line-height: 24px;
                 background: $background-middle;
                 mix-blend-mode: lighten; 
+                z-index: 1;
             }
         }
     }
