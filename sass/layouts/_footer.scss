@@ -4,7 +4,9 @@
     padding: 24px 0 35px 20px;
     font-family: $font-family-logo;
     &__logo {
-        margin-top:0;
+        display: block;
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
     &__list {
         a {
